@@ -2,7 +2,7 @@ use super::super::chips::merkle_v2::{MerkleTreeV2Chip, MerkleTreeV2Config};
 use halo2_proofs::{arithmetic::FieldExt, circuit::*, plonk::*};
 
 #[derive(Default)]
-struct MerkleTreeV2Circuit<F> {
+pub struct MerkleTreeV2Circuit<F> {
     pub leaf: Value<F>,
     pub elements: Vec<Value<F>>,
     pub indices: Vec<Value<F>>,

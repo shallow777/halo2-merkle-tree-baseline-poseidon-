@@ -124,6 +124,7 @@ impl MerkleTreeV3Chip {
         element: Value<Fp>,
         index: Value<Fp>,
     ) -> Result<AssignedCell<Fp, Fp>, Error> {
+
         let (left, right) = layouter.assign_region(
             || "merkle_prove_leaf",
             |mut region| {
@@ -175,13 +176,14 @@ impl MerkleTreeV3Chip {
                 elements[i],
                 indices[i],
             )?;
+
         }
         Ok(leaf_or_digest)
     }
 }
 
 #[derive(Default)]
-struct MerkleTreeV3Circuit {
+pub struct MerkleTreeV3Circuit {
     pub leaf: Value<Fp>,
     pub elements: Vec<Value<Fp>>,
     pub indices: Vec<Value<Fp>>,
