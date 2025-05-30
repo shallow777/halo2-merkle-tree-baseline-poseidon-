@@ -15,3 +15,8 @@ Run examples
 ```
 cargo test -- --nocapture test
 ```
+
+run the poseidon baseline
+```
+RAYON_NUM_THREADS=1 cargo run --example prove_merkle --release
+```
